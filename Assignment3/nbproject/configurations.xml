@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Assignment2.cpp</itemPath>
+      <itemPath>Assignment3.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -30,13 +30,13 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="Assignment2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Assignment3.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -59,7 +59,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="Assignment2.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Assignment3.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
