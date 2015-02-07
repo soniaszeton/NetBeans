@@ -35,7 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Assignment4.o
+	${OBJECTDIR}/Assignment4.o \
+	${OBJECTDIR}/CommunicationNetwork.o
 
 
 # C Compiler Flags
@@ -66,6 +67,11 @@ ${OBJECTDIR}/Assignment4.o: Assignment4.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Assignment4.o Assignment4.cpp
+
+${OBJECTDIR}/CommunicationNetwork.o: CommunicationNetwork.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CommunicationNetwork.o CommunicationNetwork.cpp
 
 # Subprojects
 .build-subprojects:
