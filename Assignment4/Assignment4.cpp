@@ -62,12 +62,6 @@ int main(int argc, char** argv) {
             }
             case 3:
             {
-                if (network->queueIsFull()) {
-                    while (!network->queueIsEmpty()) {
-                        word = network->dequeue();
-                        network->transmitMsg(word);
-                    }
-                }
                 network->enqueue(message[word_index++]);
                 if (word_index == 32) {
                     word_index = 0;
@@ -76,12 +70,7 @@ int main(int argc, char** argv) {
             }
             case 4:
             {
-                if (network->queueIsEmpty()) {
-                    cout << "Queue is empty." << endl;
-                } else {
-                    word = network->dequeue();
-                    network->transmitMsg(word);
-                }
+                network->dequeue();
                 break;
             }
             case 5:
@@ -93,29 +82,20 @@ int main(int argc, char** argv) {
             {
                 // Send anything already in the queue 
                 while (!network->queueIsEmpty()) {
-                    word = network->dequeue();
-                    network->transmitMsg(word);
+                    network->dequeue();
                 }
 
                 // Putting the entire message in the queue
                 word_index = 0;
                 while (word_index < 32) {
-                    if (network->queueIsFull()) {
-                        while (!network->queueIsEmpty()) {
-                            word = network->dequeue();
-                            network->transmitMsg(word);
-                        }
-                    }
+                    
                     network->enqueue(message[word_index++]);
-                    if (word_index == 32) {
-                        word_index = 0;
-                    }
                 }
+                word_index = 0;
                 
                 // Sending the entire message
                 while (!network->queueIsEmpty()) {
-                    word = network->dequeue();
-                    network->transmitMsg(word);
+                    network->dequeue();
                 }
                 break;
             }

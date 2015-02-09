@@ -36,6 +36,12 @@ CommunicationNetwork::~CommunicationNetwork() {
 }
 
 void CommunicationNetwork::enqueue(string word) {
+    if (queueIsFull()) {
+        while (!queueIsEmpty()) {
+            dequeue();
+        }
+    }
+    
     arrayQueue[queueTail++] = word;
     if (queueTail == queueSize) {
         queueTail = 0;
@@ -48,15 +54,19 @@ void CommunicationNetwork::enqueue(string word) {
     cout << "T: " << queueTail << endl;
 }
 
-string CommunicationNetwork::dequeue() {
-    string word = arrayQueue[queueHead++];
-    if (queueHead == queueSize) {
-        queueHead = 0;
+void CommunicationNetwork::dequeue() {
+    if (queueIsEmpty()) {
+        cout << "Queue is empty." << endl;
+    } else {
+        string word = arrayQueue[queueHead++];
+        if (queueHead == queueSize) {
+            queueHead = 0;
+        }
+        if (queueHead == queueTail) {
+            isFull = false;
+        }
+        transmitMsg(word);
     }
-    if (queueHead == queueTail) {
-        isFull = false;
-    }
-    return word;
 }
 
 bool CommunicationNetwork::queueIsFull() {

@@ -25,7 +25,7 @@ class CommunicationNetwork
         virtual ~CommunicationNetwork();
         //circular queue methods
         void enqueue(std::string);
-        std::string dequeue(); //should send through network, call transmit msg
+        void dequeue(); //should send through network, call transmit msg
         void printQueue();
         void buildNetwork();
         void printPath();
