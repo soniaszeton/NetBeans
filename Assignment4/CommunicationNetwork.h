@@ -30,17 +30,29 @@ class CommunicationNetwork
         void buildNetwork();
         void printPath();
         bool queueIsFull(); //send when full
+        bool queueIsEmpty();
         void transmitMsg(std::string);
-
+        
     protected:
     private:
-        // City *head;
-        // City *tail;
         int queueSize;
         int queueHead;
         int queueTail;
         std::string *arrayQueue;
         bool isFull;
+        std::string *message;
+        
+        struct City
+        {
+            std::string name;
+            std::string message;
+            City *next;
+            City *previous;
+        };
+
+        City *head;
+        City *tail;
+
 
 };
 
