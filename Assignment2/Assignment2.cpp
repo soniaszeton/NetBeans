@@ -41,7 +41,7 @@ void bubbleSort(Word** array, int length)
        swapped = false;
        for(int i = 1; i < length; i++)
        {
-           if(array[i-1]->count < array[i]->count)
+            if(array[i-1]->count < array[i]->count)
            {
                Word* word = array[i-1];
                array[i-1] = array[i];

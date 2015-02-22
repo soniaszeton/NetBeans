@@ -1,22 +1,14 @@
 /* 
  * File:   CommunicationNetwork.h
- * Author: Sonia
- *
+ * Author: Sonia Szeton
+ * Mentor: Derk Norton
  * Created on February 7, 2015, 1:36 PM
+ * Header file for CommunicationNetwork 
  */
 
 #ifndef COMMUNICATIONNETWORK_H
 #define	COMMUNICATIONNETWORK_H
 #include<string>
-
-/*struct City{
-
-    std::string name;
-    std::string message; //intended to hold one word
-    City *next;
-    City *previous;
-
-}; */
 
 class CommunicationNetwork
 {

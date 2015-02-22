@@ -17,13 +17,14 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
+    // Open the file containing the message
     ifstream file;
     file.open("messageIn.txt");
     if (!file.is_open()) {
         cout << "File not found." << endl;
     }
 
-    // Pulls out a word from the message sends it through each city then gets the next word
+    // Fills an array with the message
     string word;
     string *message = new string [35];
     int word_count = 0;
@@ -33,7 +34,7 @@ int main(int argc, char** argv) {
 
     }
 
-
+    // Creates new network 
     CommunicationNetwork *network = new CommunicationNetwork(10);
     string user_command;
     int word_index = 0;
@@ -49,6 +50,7 @@ int main(int argc, char** argv) {
         cout << "7. Quit" << endl;
         getline(cin, user_command);
 
+        // Takes whatever the user entered and executes the corresponding function 
         switch (stoi(user_command)) {
             case 1:
             {
@@ -63,6 +65,8 @@ int main(int argc, char** argv) {
             case 3:
             {
                 network->enqueue(message[word_index++]);
+                
+                // If the end of the message is reached, send back to beginning of message
                 if (word_index == 32) {
                     word_index = 0;
                 }

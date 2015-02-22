@@ -119,10 +119,18 @@ void transmitMsg()
     while(file >> word)
     {
         City *current_city = head;
+        current_city->message = word;
+        
         while(current_city != NULL)
         {
-            cout << current_city->name << " received " << word << endl;
+            cout << current_city->name << " received " << current_city->message << endl;
+            
+            if(current_city->next != NULL) {
+                current_city->next->message = current_city->message;
+            }
+            current_city->message = "";
             current_city = current_city->next;
+            
         }
     }
 
@@ -163,7 +171,7 @@ int main(int argc, char** argv) {
     string previous_city;
     string unwanted_city;
 
-    buildNetwork();
+    //buildNetwork();
     while(true)
     {
         cout << "======Main Menu=====" << endl;
