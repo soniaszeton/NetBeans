@@ -36,12 +36,12 @@ void MovieTree::addMovieNode(int ranking, string title, int releaseYear, int qua
     new_node->leftChild = NULL;
     new_node->rightChild = NULL;
     new_node->parent = NULL;
-    if(root != NULL) {
+    if (root != NULL) {
         insert(new_node, root, operation_output);
     } else {
         root = new_node;
     }
-    
+
 }
 
 void MovieTree::findMovie(string title) {
@@ -79,8 +79,16 @@ void MovieTree::printMovieInventory(MovieNode* tree) {
 }
 
 void MovieTree::rentMovie(string title) {
+    json_object *j_operation = json_object_new_object();
+    json_object_object_add(Assignment6Output, to_string(operation_counter++).c_str(), j_operation);
+    json_object *operation_name = json_object_new_string("rent");
+    json_object_object_add(j_operation, "operation", operation_name);
+    json_object *operation_parameter = json_object_new_string(title.c_str());
+    json_object_object_add(j_operation, "parameter", operation_parameter);
+    json_object *operation_output = json_object_new_array();
+    json_object_object_add(j_operation, "output", operation_output);
 
-    MovieNode *wanted_movie = searchMovieTree(root, title, NULL);
+    MovieNode *wanted_movie = searchMovieTree(root, title, operation_output);
     if (wanted_movie != NULL) {
         if (wanted_movie->quantity > 0) {
             cout << "Movie has been rented." << endl;
@@ -91,21 +99,13 @@ void MovieTree::rentMovie(string title) {
             cout << "Title:" << wanted_movie->title << endl;
             cout << "Year:" << wanted_movie->year << endl;
             cout << "Quantity:" << wanted_movie->quantity << endl;
-             
+
         } else {
             cout << "Movie out of stock." << endl;
         }
     } else {
         cout << "Movie not found." << endl;
     }
-    json_object *j_operation = json_object_new_object();
-    json_object_object_add(Assignment6Output, to_string(operation_counter++).c_str(), j_operation);
-    json_object *operation_name = json_object_new_string("rent");
-    json_object_object_add(j_operation, "operation", operation_name);
-    json_object *operation_parameter = json_object_new_string(title.c_str());
-    json_object_object_add(j_operation, "parameter", operation_parameter);
-    json_object *operation_output = json_object_new_int(wanted_movie->quantity);
-    json_object_object_add(j_operation, "output", operation_output);
 }
 
 int MovieTree::countMovieNodes() {
@@ -128,7 +128,7 @@ int MovieTree::countMovieNodes(MovieNode *tree) {
         num_movies += countMovieNodes(tree->rightChild);
     }
     return num_movies;
-    
+
 }
 
 void MovieTree::initJson() {
@@ -145,27 +145,87 @@ void MovieTree::deleteMovieNode(string title) {
     json_object_object_add(j_operation, "parameter", operation_parameter);
     json_object *operation_output = json_object_new_array();
     json_object_object_add(j_operation, "output", operation_output);
-    MovieNode* found_node = searchMovieTree(root, title, operation_output);
-    root = deleteNode(found_node);
-    
+    root = deleteNode(root, title, operation_output);
+
 }
 
-MovieNode* MovieTree::deleteNode(MovieNode *node) {
-    if(node == NULL) {
-        return root;
+MovieNode* MovieTree::deleteNode(MovieNode* tree, string title, json_object * traverseLog) {
+    if (tree != NULL) {
+        if (traverseLog != NULL) {
+            json_object *j_title = json_object_new_string(tree->title.c_str());
+            json_object_array_add(traverseLog, j_title);
+        }
+        if (title == tree->title) {
+            // Found the node to delete
+            MovieNode *parent = tree->parent;
+            MovieNode *new_subtree;
+            if (tree->leftChild == NULL) {
+                // The new node is the right child (or NULL)
+                tree->rightChild->parent = parent;
+                new_subtree = tree->rightChild;
+            } else if (tree->rightChild == NULL) {
+                // The new node is the left child
+                tree->leftChild->parent = parent;
+                new_subtree = tree->leftChild;
+            } else {
+                // The new node is the minimum node under the right child
+                if (tree->rightChild != NULL) {
+                    new_subtree = minLeftNode(tree->rightChild);
+                    if(new_subtree != tree->rightChild) {
+                        new_subtree->parent->leftChild = NULL;
+                    }
+                    new_subtree->parent = parent;
+                    new_subtree->leftChild = tree->leftChild;
+                    minRightNode(new_subtree)->rightChild = tree->rightChild;
+                }
+            }
+            // Insert the new node into the parent
+            if (tree == parent->leftChild) {
+                parent->leftChild = new_subtree;
+            } else {
+                parent->rightChild = new_subtree;
+            }
+            // Delete the old node
+            delete tree;
+            // Assign the new subtree
+            tree = new_subtree;
+        } 
+        if (title < tree->title) {
+            // The node to be deleted must be on the left side
+            tree->leftChild = deleteNode(tree->leftChild, title, traverseLog);
+        } else {
+            // The node to be deleted must be on the right side
+            tree->rightChild = deleteNode(tree->rightChild, title, traverseLog);
+        }
+    } 
+    
+    // return the new subtree
+    return tree;
+}
+
+MovieNode* MovieTree::minLeftNode(MovieNode* tree) {
+    if (tree->leftChild == NULL) {
+        return tree;
+    } else {
+        return minLeftNode(tree->leftChild);
     }
-    
 }
 
+MovieNode* MovieTree::minRightNode(MovieNode* tree) {
+    if(tree->rightChild == NULL) {
+        return tree;
+    } else {
+        return minRightNode(tree->rightChild);
+    }
+}
 
 json_object* MovieTree::getJsonObject() {
     return Assignment6Output;
 }
 
-
 MovieNode* MovieTree::searchMovieTree(MovieNode* tree, string title, json_object * traverseLog) {
     if (tree != NULL) {
-        if(traverseLog != NULL) {
+        if (traverseLog != NULL) {
             json_object *j_title = json_object_new_string(tree->title.c_str());
             json_object_array_add(traverseLog, j_title);
         }
@@ -175,13 +235,13 @@ MovieNode* MovieTree::searchMovieTree(MovieNode* tree, string title, json_object
             return searchMovieTree(tree->leftChild, title, traverseLog);
         else
             return searchMovieTree(tree->rightChild, title, traverseLog);
-    } else 
+    } else
         return NULL;
 }
 
 void MovieTree::insert(MovieNode *new_node, MovieNode *tree, json_object * traverseLog) {
     string title = new_node->title;
-    if(traverseLog != NULL) {
+    if (traverseLog != NULL) {
         json_object *j_title = json_object_new_string(tree->title.c_str());
         json_object_array_add(traverseLog, j_title);
     }

@@ -571,11 +571,17 @@
   },
   "51":{
     "operation":"rent",
-    "parameter":"Pulp Fiction",
-    "output":33
-  },
-  "52":{
-    "operation":"count",
-    "output":50
+    "parameter":"sldkfja",
+    "output":[
+      "Shawshank Redemption",
+      "The Godfather",
+      "The Godfather: Part II",
+      "The Good the Bad and the Ugly",
+      "The Lord of the Rings: The Return of the King",
+      "The Lord of the Rings: The Two Towers",
+      "The Matrix",
+      "The Usual Suspects",
+      "Whiplash"
+    ]
   }
 }

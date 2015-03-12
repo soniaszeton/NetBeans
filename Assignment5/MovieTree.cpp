@@ -47,11 +47,11 @@ void MovieTree::findMovie(string title) {
     }
 }
 
-void MovieTree::deleteAll(MovieNode* node) {
-    if (node != NULL) {
-        deleteAll(node->leftChild);
-        deleteAll(node->rightChild);
-        delete node;
+void MovieTree::deleteAll(MovieNode* tree) {
+    if (tree != NULL) {
+        deleteAll(tree->leftChild);
+        deleteAll(tree->rightChild);
+        delete tree;
     }
 }
 
@@ -59,11 +59,11 @@ void MovieTree::printMovieInventory() {
     printMovieInventory(root);
 }
 
-void MovieTree::printMovieInventory(MovieNode* node) {
-    if (node != NULL) {
-        printMovieInventory(node->leftChild);
-        cout << "Movie: " << node->title << endl;
-        printMovieInventory(node->rightChild);
+void MovieTree::printMovieInventory(MovieNode* tree) {
+    if (tree != NULL) {
+        printMovieInventory(tree->leftChild);
+        cout << "Movie: " << tree->title << endl;
+        printMovieInventory(tree->rightChild);
     }
 }
 
@@ -82,14 +82,14 @@ void MovieTree::rentMovie(string title) {
     }
 }
 
-MovieNode* MovieTree::searchMovieTree(MovieNode* node, string title) {
-    if (node != NULL) {
-        if (title == node->title)
-            return node;
-        if (title < node->title)
-            return searchMovieTree(node->leftChild, title);
+MovieNode* MovieTree::searchMovieTree(MovieNode* tree, string title) {
+    if (tree != NULL) {
+        if (title == tree->title)
+            return tree;
+        if (title < tree->title)
+            return searchMovieTree(tree->leftChild, title);
         else
-            return searchMovieTree(node->rightChild, title);
+            return searchMovieTree(tree->rightChild, title);
     } else return NULL;
 }
 

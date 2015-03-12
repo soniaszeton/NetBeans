@@ -51,9 +51,11 @@ class MovieTree
         void deleteAll(MovieNode * node);
         void printMovieInventory(MovieNode * node);
         void insert(MovieNode *node, MovieNode *tree, json_object * traverseLog);
-        MovieNode* deleteNode(MovieNode *node);
+        MovieNode* deleteNode(MovieNode* tree, std::string title, json_object * traverseLog);
         MovieNode* searchMovieTree(MovieNode * node, std::string title, json_object * traverseLog);
         int countMovieNodes(MovieNode *node);
+        MovieNode* minLeftNode(MovieNode* tree);
+        MovieNode* minRightNode(MovieNode* tree);
         MovieNode *root;
         //including the json_object in the class makes it global within the class, much easier to work with
         json_object *Assignment6Output;
