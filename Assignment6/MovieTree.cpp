@@ -155,30 +155,36 @@ MovieNode* MovieTree::deleteNode(MovieNode* tree, string title, json_object * tr
             json_object *j_title = json_object_new_string(tree->title.c_str());
             json_object_array_add(traverseLog, j_title);
         }
+
         if (title == tree->title) {
             // Found the node to delete
             MovieNode *parent = tree->parent;
-            MovieNode *new_subtree;
-            if (tree->leftChild == NULL) {
-                // The new node is the right child (or NULL)
-                tree->rightChild->parent = parent;
-                new_subtree = tree->rightChild;
-            } else if (tree->rightChild == NULL) {
-                // The new node is the left child
-                tree->leftChild->parent = parent;
-                new_subtree = tree->leftChild;
-            } else {
-                // The new node is the minimum node under the right child
-                if (tree->rightChild != NULL) {
-                    new_subtree = minLeftNode(tree->rightChild);
-                    if(new_subtree != tree->rightChild) {
-                        new_subtree->parent->leftChild = NULL;
+            MovieNode *new_subtree = NULL;
+
+            if (tree->leftChild != NULL || tree->rightChild != NULL) {
+
+                if (tree->leftChild == NULL) {
+                    // The new node is the right child (or NULL)
+                    tree->rightChild->parent = parent;
+                    new_subtree = tree->rightChild;
+                } else if (tree->rightChild == NULL) {
+                    // The new node is the left child
+                    tree->leftChild->parent = parent;
+                    new_subtree = tree->leftChild;
+                } else {
+                    // The new node is the minimum node under the right child
+                    if (tree->rightChild != NULL) {
+                        new_subtree = minLeftNode(tree->rightChild);
+                        if (new_subtree != tree->rightChild) {
+                            new_subtree->parent->leftChild = NULL;
+                        }
+                        new_subtree->parent = parent;
+                        new_subtree->leftChild = tree->leftChild;
+                        minRightNode(new_subtree)->rightChild = tree->rightChild;
                     }
-                    new_subtree->parent = parent;
-                    new_subtree->leftChild = tree->leftChild;
-                    minRightNode(new_subtree)->rightChild = tree->rightChild;
                 }
             }
+
             // Insert the new node into the parent
             if (tree == parent->leftChild) {
                 parent->leftChild = new_subtree;
@@ -189,16 +195,18 @@ MovieNode* MovieTree::deleteNode(MovieNode* tree, string title, json_object * tr
             delete tree;
             // Assign the new subtree
             tree = new_subtree;
-        } 
-        if (title < tree->title) {
+            
+        } else if (title < tree->title) {
             // The node to be deleted must be on the left side
             tree->leftChild = deleteNode(tree->leftChild, title, traverseLog);
         } else {
             // The node to be deleted must be on the right side
             tree->rightChild = deleteNode(tree->rightChild, title, traverseLog);
         }
-    } 
-    
+    } else {
+        cout << "Movie not found." << endl;
+    }
+
     // return the new subtree
     return tree;
 }
@@ -212,7 +220,7 @@ MovieNode* MovieTree::minLeftNode(MovieNode* tree) {
 }
 
 MovieNode* MovieTree::minRightNode(MovieNode* tree) {
-    if(tree->rightChild == NULL) {
+    if (tree->rightChild == NULL) {
         return tree;
     } else {
         return minRightNode(tree->rightChild);
