@@ -58,7 +58,6 @@ int main(int argc, char** argv) {
         getline(lineStream, element);
         quantity = stoi(element);
         tree->addMovieNode(ranking, title, year, quantity);
-               
     }
     input_file.close();
 
@@ -70,7 +69,8 @@ int main(int argc, char** argv) {
         cout << "2. Print the inventory" << endl;
         cout << "3. Delete movie" << endl;
         cout << "4. Count movies" << endl;
-        cout << "5. Quit" << endl;
+        cout << "5. Count the longest path" << endl;
+        cout << "6. Quit" << endl;
         getline(cin, user_command);
 
         switch (stoi(user_command)) {
@@ -91,14 +91,20 @@ int main(int argc, char** argv) {
                 cout << "Enter title" << endl;
                 getline(cin, movie_to_delete);
                 tree->deleteMovieNode(movie_to_delete);
+                cout << tree->isValid() << endl;
                 break;
             }
             case 4:
             {
-                tree->countMovieNodes();
+                cout << "Tree contains: " << tree->countMovieNodes() << " nodes" << endl;
                 break;
             }
             case 5:
+            {
+                cout << "Longest path: " << tree->countLongestPath() << endl;
+                break;
+            }
+            case 6:
             {
                 json_object *jObject = tree->getJsonObject();
                 output_file << json_object_to_json_string_ext(jObject, JSON_C_TO_STRING_PRETTY) << endl;

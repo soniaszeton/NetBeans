@@ -24,8 +24,7 @@
     "operation":"add",
     "parameter":"The Dark Knight",
     "output":[
-      "Shawshank Redemption",
-      "The Godfather"
+      "Shawshank Redemption"
     ]
   },
   "5":{
@@ -56,8 +55,7 @@
     "parameter":"The Good the Bad and the Ugly",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II"
+      "The Dark Knight"
     ]
   },
   "9":{
@@ -65,8 +63,7 @@
     "parameter":"The Lord of the Rings: The Return of the King",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
+      "The Dark Knight",
       "The Good the Bad and the Ugly"
     ]
   },
@@ -84,8 +81,6 @@
     "parameter":"The Lord of the Rings: The Fellowship of the Ring",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
       "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King"
     ]
@@ -95,7 +90,7 @@
     "parameter":"Star Wars: Episode V - The Empire Strikes Back",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
+      "The Good the Bad and the Ugly",
       "The Dark Knight"
     ]
   },
@@ -115,7 +110,6 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
       "Fight Club",
       "Forrest Gump"
     ]
@@ -126,7 +120,6 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
       "Fight Club",
       "Forrest Gump",
       "Inception"
@@ -137,8 +130,6 @@
     "parameter":"The Lord of the Rings: The Two Towers",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
       "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King"
     ]
@@ -149,10 +140,9 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
       "Fight Club",
-      "Forrest Gump",
-      "Inception"
+      "Inception",
+      "Forrest Gump"
     ]
   },
   "18":{
@@ -160,8 +150,6 @@
     "parameter":"The Matrix",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
       "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King",
       "The Lord of the Rings: The Two Towers"
@@ -172,7 +160,7 @@
     "parameter":"Star Wars: Episode IV - A New Hope",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
+      "The Good the Bad and the Ugly",
       "The Dark Knight",
       "Star Wars: Episode V - The Empire Strikes Back"
     ]
@@ -182,6 +170,7 @@
     "parameter":"Seven Samurai",
     "output":[
       "Shawshank Redemption",
+      "Inception",
       "Pulp Fiction",
       "Schindler's List"
     ]
@@ -191,11 +180,8 @@
     "parameter":"Interstellar",
     "output":[
       "Shawshank Redemption",
-      "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
       "Inception",
+      "Pulp Fiction",
       "One Flew Over the Cuckoo's Nest"
     ]
   },
@@ -204,9 +190,9 @@
     "parameter":"City of God",
     "output":[
       "Shawshank Redemption",
-      "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club"
+      "Inception",
+      "Fight Club",
+      "12 Angry Men"
     ]
   },
   "23":{
@@ -214,6 +200,7 @@
     "parameter":"Se7en",
     "output":[
       "Shawshank Redemption",
+      "Inception",
       "Pulp Fiction",
       "Schindler's List",
       "Seven Samurai"
@@ -224,8 +211,6 @@
     "parameter":"The Usual Suspects",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
       "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King",
       "The Lord of the Rings: The Two Towers",
@@ -237,11 +222,8 @@
     "parameter":"The Silence of the Lambs",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
       "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King",
-      "The Lord of the Rings: The Two Towers",
       "The Matrix",
       "The Usual Suspects"
     ]
@@ -251,11 +233,8 @@
     "parameter":"It's a Wonderful Life",
     "output":[
       "Shawshank Redemption",
-      "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
       "Inception",
+      "Pulp Fiction",
       "One Flew Over the Cuckoo's Nest",
       "Interstellar"
     ]
@@ -265,14 +244,10 @@
     "parameter":"Once Upon a Time in the West",
     "output":[
       "Shawshank Redemption",
-      "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
       "Inception",
-      "One Flew Over the Cuckoo's Nest",
-      "Interstellar",
-      "It's a Wonderful Life"
+      "Pulp Fiction",
+      "It's a Wonderful Life",
+      "One Flew Over the Cuckoo's Nest"
     ]
   },
   "28":{
@@ -280,14 +255,10 @@
     "parameter":"Leon: The Professional",
     "output":[
       "Shawshank Redemption",
-      "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
       "Inception",
-      "One Flew Over the Cuckoo's Nest",
-      "Interstellar",
+      "Pulp Fiction",
       "It's a Wonderful Life",
+      "One Flew Over the Cuckoo's Nest",
       "Once Upon a Time in the West"
     ]
   },
@@ -296,13 +267,8 @@
     "parameter":"Life Is Beautiful",
     "output":[
       "Shawshank Redemption",
-      "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
       "Inception",
-      "One Flew Over the Cuckoo's Nest",
-      "Interstellar",
+      "Pulp Fiction",
       "It's a Wonderful Life",
       "Once Upon a Time in the West",
       "Leon: The Professional"
@@ -313,9 +279,9 @@
     "parameter":"Casablanca",
     "output":[
       "Shawshank Redemption",
-      "Pulp Fiction",
-      "12 Angry Men",
+      "Inception",
       "Fight Club",
+      "12 Angry Men",
       "City of God"
     ]
   },
@@ -324,7 +290,10 @@
     "parameter":"Raiders of the Lost Ark",
     "output":[
       "Shawshank Redemption",
+      "Inception",
+      "Once Upon a Time in the West",
       "Pulp Fiction",
+      "Se7en",
       "Schindler's List"
     ]
   },
@@ -334,10 +303,7 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "City of God",
-      "Casablanca"
+      "One Flew Over the Cuckoo's Nest"
     ]
   },
   "33":{
@@ -346,6 +312,7 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
+      "Se7en",
       "Schindler's List",
       "Raiders of the Lost Ark"
     ]
@@ -356,10 +323,8 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "City of God",
-      "Casablanca"
+      "One Flew Over the Cuckoo's Nest",
+      "American History X"
     ]
   },
   "35":{
@@ -367,8 +332,8 @@
     "parameter":"Spirited Away",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Dark Knight",
+      "The Lord of the Rings: The Return of the King",
+      "The Good the Bad and the Ugly",
       "Star Wars: Episode V - The Empire Strikes Back",
       "Star Wars: Episode IV - A New Hope"
     ]
@@ -379,10 +344,7 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
-      "Inception",
+      "City Lights",
       "One Flew Over the Cuckoo's Nest"
     ]
   },
@@ -392,9 +354,9 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "Schindler's List",
-      "Raiders of the Lost Ark",
-      "Saving Private Ryan"
+      "Se7en",
+      "Saving Private Ryan",
+      "Raiders of the Lost Ark"
     ]
   },
   "38":{
@@ -402,11 +364,7 @@
     "parameter":"Whiplash",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
-      "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King",
-      "The Lord of the Rings: The Two Towers",
       "The Matrix",
       "The Usual Suspects"
     ]
@@ -416,10 +374,8 @@
     "parameter":"The Intouchables",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
-      "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King",
+      "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Fellowship of the Ring"
     ]
   },
@@ -429,16 +385,8 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
-      "Inception",
-      "One Flew Over the Cuckoo's Nest",
-      "Interstellar",
-      "It's a Wonderful Life",
-      "Once Upon a Time in the West",
-      "Leon: The Professional",
-      "Life Is Beautiful"
+      "City Lights",
+      "One Flew Over the Cuckoo's Nest"
     ]
   },
   "41":{
@@ -446,9 +394,10 @@
     "parameter":"Terminator 2: Judgment Day",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Dark Knight",
-      "Star Wars: Episode V - The Empire Strikes Back"
+      "The Lord of the Rings: The Return of the King",
+      "The Good the Bad and the Ugly",
+      "Star Wars: Episode V - The Empire Strikes Back",
+      "The Dark Knight"
     ]
   },
   "42":{
@@ -457,16 +406,8 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
-      "Inception",
+      "City Lights",
       "One Flew Over the Cuckoo's Nest",
-      "Interstellar",
-      "It's a Wonderful Life",
-      "Once Upon a Time in the West",
-      "Leon: The Professional",
-      "Life Is Beautiful",
       "Modern Times"
     ]
   },
@@ -475,10 +416,8 @@
     "parameter":"The Green Mile",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
-      "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King",
+      "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Fellowship of the Ring",
       "The Intouchables"
     ]
@@ -488,11 +427,7 @@
     "parameter":"The Pianist",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
-      "The Good the Bad and the Ugly",
       "The Lord of the Rings: The Return of the King",
-      "The Lord of the Rings: The Two Towers",
       "The Matrix",
       "The Usual Suspects",
       "The Silence of the Lambs"
@@ -503,7 +438,9 @@
     "parameter":"The Departed",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
+      "The Lord of the Rings: The Return of the King",
+      "The Good the Bad and the Ugly",
+      "Star Wars: Episode V - The Empire Strikes Back",
       "The Dark Knight"
     ]
   },
@@ -513,10 +450,7 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "City of God",
-      "Casablanca",
+      "City Lights",
       "American History X"
     ]
   },
@@ -525,9 +459,10 @@
     "parameter":"Sunset Blvd.",
     "output":[
       "Shawshank Redemption",
-      "The Godfather",
-      "The Dark Knight",
+      "The Lord of the Rings: The Return of the King",
+      "The Good the Bad and the Ugly",
       "Star Wars: Episode V - The Empire Strikes Back",
+      "The Dark Knight",
       "Terminator 2: Judgment Day"
     ]
   },
@@ -537,11 +472,10 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "Forrest Gump",
-      "Inception",
-      "Goodfellas"
+      "City Lights",
+      "One Flew Over the Cuckoo's Nest",
+      "Modern Times",
+      "Memento"
     ]
   },
   "49":{
@@ -550,9 +484,10 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "City of God"
+      "City Lights",
+      "One Flew Over the Cuckoo's Nest",
+      "Memento",
+      "Gladiator"
     ]
   },
   "50":{
@@ -561,42 +496,14 @@
     "output":[
       "Shawshank Redemption",
       "Pulp Fiction",
-      "12 Angry Men",
-      "Fight Club",
-      "City of God",
-      "Casablanca",
+      "Memento",
+      "City Lights",
       "American History X",
       "Apocalypse Now"
     ]
   },
   "51":{
-    "operation":"delete",
-    "parameter":"Whiplash",
-    "output":[
-      "Shawshank Redemption",
-      "The Godfather",
-      "The Godfather: Part II",
-      "The Good the Bad and the Ugly",
-      "The Lord of the Rings: The Return of the King",
-      "The Lord of the Rings: The Two Towers",
-      "The Matrix",
-      "The Usual Suspects",
-      "Whiplash"
-    ]
-  },
-  "52":{
     "operation":"count",
-    "output":49
-  },
-  "53":{
-    "operation":"delete",
-    "parameter":"Shawshank Redemption",
-    "output":[
-      "Shawshank Redemption"
-    ]
-  },
-  "54":{
-    "operation":"count",
-    "output":48
+    "output":36
   }
 }
